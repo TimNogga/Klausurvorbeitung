@@ -1,0 +1,195 @@
+\documentclass{report}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+\usepackage{tikz}
+\newtheorem{lemma}{Lemma}
+\usetikzlibrary{matrix, positioning, arrows.meta}
+
+\title{\Huge{Algo Zusammenfassung}}
+\author{\huge{Tim Nogga}}
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+
+\chapter{Einleitung}
+\section{Insertionsort}
+\begin{algorithm}[H]
+\KwIn{int[] a}
+\KwOut{a sortiert}
+\For{int j = 1; $j < a$.length; j++} {
+	int x = a[j]\;
+	int i = j - 1\;
+	\While{$i \geq 0$ a[i] $> x$} {
+		a[i + 1] = a[i]\;
+		i = i - 1\;
+	}
+	a[i + 1] = x\;
+
+}
+\Return a;
+\caption{Insertion-Sort}
+\end{algorithm}
+\thm {}{Die Ausgabe von Insertionsort ist stets eine aufsteigend sortierte Permutation der Eingabe.}
+\thm {}{Die Laufzeit von Insertionsort ist in $O(n^2)$}
+
+\section{Größenordnungen}
+\dfn{Größenordnungen}{Seien $f,g: \mathbb{N} \rightarrow \mathbb{R}_{\geq 0}$ zwei Funktionen
+\begin{enumerate}[label=\bfseries\tiny\protect\circled{\small\arabic*}]
+	\item $f(n) \in \mathcal{O}(g(n))$ falls $\exists c > 0, n_0 \in \mathbb{N}$ mit $f(n) \leq c \cdot g(n) \forall n \geq n_0$
+	\item $f(n) \in \Omega(g(n))$ falls $\exists c > 0, n_0 \in \mathbb{N}$ mit $f(n) \geq c \cdot g(n) \forall n \geq n_0$
+	\item $f(n) \in \Theta(g(n))$ falls $f(n) \in \mathcal{O}(g(n))$ und $f(n) \in \Omega(g(n))$
+	\item $f(n) \in o(g(n))$ falls $\forall c > 0 \exists n_0 \in \mathbb{N}$ mit $f(n) \leq c \cdot g(n) \forall n \geq n_0$
+	\item $f(n) \in \omega(g(n))$ falls $\forall c > 0 \exists n_0 \in \mathbb{N}$ mit $f(n) \geq c \cdot g(n) \forall n \geq n_0$
+	\end{enumerate}
+}
+\nt{Es gilt für die exakten schranken $\lim_{n\to\infty}\frac{f(n)}{g(n)}=0$, wenn $f(n)\in o(g(n))$ und umgekehrt, wenn $f(n)\in\omega(g(n))$}
+\chapter{Methoden zum Entwurf von Algorithmen}
+\section{Divide and Conquer}
+\subsection{Binary Search}
+\begin{algorithm}[H]
+\KwIn{int[] a, int x, int l, int r}
+\KwOut{Bool}
+\If{$l > r$} {
+	\Return false\;
+}
+int m = $\lfloor \frac{l + r}{2} \rfloor$\;
+\If{$a[m] < x$} {
+	\Return binarySearch(a, x, m + 1, r)\;
+}
+\If{$a[m] > x$} {
+	\Return binarySearch(a, x, l, m - 1)\;
+	
+}
+\caption[short]{Binary Search}
+\end{algorithm}
+\thm{}{Die Laufzeit von Binary Search ist in $O(\log n)$}
+\nt{Erklärung:
+\begin{itemize}
+	\item $l > r$ bedeutet, dass das gesuchte Element nicht in der Liste ist
+	\item $a[m] < x$ bedeutet, dass das gesuchte Element rechts von $m$ ist
+	\item $a[m] > x$ bedeutet, dass das gesuchte Element links von $m$ ist
+\end{itemize}
+Geht rekurisv weiter, bis das Element gefunden ist.}
+\subsection{Merge Sort}
+\begin{algorithm}[H]
+	\KwIn{int[] a, int l, int r}
+	\KwOut{a sortiert}
+	\If{$l < r$} {
+		int m = $\lfloor \frac{l + r}{2} \rfloor$\;
+		mergeSort(a, l, m)\;
+		mergeSort(a, m + 1, r)\;
+		merge(a, l, m, r)\;
+	}
+	\caption[short]{Merge Sort}
+\end{algorithm}
+\begin{algorithm}[H]
+	\KwIn{int[] a, int l, int m, int r}
+	\KwOut{a sortiert}
+	int [] l = new int[m - l + 1]\;
+	int [] r = new int[r - m]\; 
+	\For{int i = 0; $i < l.length$; i++} {
+		l[i] = a[l + i]\;
+	}
+	\For{int i = 0; $i < r.length$; i++} {
+		r[i] = a[m + 1 + i]\;
+	}
+	int iL = 0\;
+	int iR = 0\;
+	int iA = l\;
+	\While{iL $ < $ m-l + 1 and iR $ < $ r - m} {
+		\If{l[iL] $\leq$ r[iR]} {
+			a[iA] = l[iL]\;
+			iL++\;
+			iA++\;
+		} \Else {
+			a[iA] = r[iR]\;
+			iR++\;
+			iA++\;
+		}
+		\While{iL $ < $ m-l + 1} {
+			a[iA] = l[iL]\;
+			iL++\;
+			iA++\;
+		}
+		\While{iR $ < $ r - m} {
+			a[iA] = r[iR]\;
+			iR++\;
+			iA++\;
+		}
+	}
+
+	\caption[short]{Merge}
+\end{algorithm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/IMG_86CA0912DB1F-1.jpeg}
+	\caption{Mergesort}
+	\label{fig:1}
+\end{figure}
+\thm{}{Die Laufzeit von Merge Sort ist in $O(n \log n)$}
+\subsection{Divide-and-Conquer am Beispiel von Strassen}
+\nt{Wenn man die Laufzeit von Strassen zu Simpleren Divide and Conquer Algorithmen vergleicht, wie Simple Product, ist die Laufzeit von Strassen besser}
+\thm{}{Die Laufzeit von Strassen ist in $O(n^{\log_2 7})$}
+\begin{myproof}
+	Siehe Seite 25 skript(Kein Bock das zu Texen) folgt aber aus $T(n) = 7T(n/2) + O(n^2)$
+\end{myproof}
+\subsection{Master Theorem}
+\thm{Mastertheorem}{Seien $a \geq 1, b > 1,$ Konstanten und sei f: $\mathbb{N} \to \mathbb{R}_{\geq 0}$ eine Funktion. Ferner sei $T: \mathbb{N} \to \mathbb{R}$ definiert durch $ T(1) = \Theta(1)$ und $$ T(n) = aT(\frac{n}{b}) + f(n)$$ für alle $n > 1$.
+Die Funktion T kann wie folgt beschrieben werden:
+\begin{itemize}
+	\item $T(n) = O(n^{\log_b a})$ falls $f(n) = O(n^{\log_b a - \epsilon})$ für eine Konstante $\epsilon > 0$
+	\item $T(n) = \Theta(n^{\log_b a} \log n)$ falls $f(n) = \Theta(n^{\log_b a})$
+	\item Falls $T(n) = \Omega(n^{\log_b a + \epsilon})$ für eine Konstante $\epsilon > 0$ und falls $af(\frac{n}{b}) \leq cf(n)$ für eine Konstante $c < 1$ und alle hinreichend großen $n$, dann gilt $T(n) = \Theta(f(n))$
+\end{itemize}
+}
+\nt{Im Prinzip werden nur die Funktionen n und $n^{\log_{b}a}$ verglichen. Im ersten Fall wächst f langsamer im zweiten gleich schnell. Verglichen zum ersten Fall führt das zu einem zusätzlichen $\log n$ führt. Im dritten Fall wächst f schneller als $n^{\log_{b}a}$, also ist die Lösung $\Theta(f(n))$}
+\begin{lemma}
+	Seien $a \geq 1, b > 1,$ Konstanten und sei f: $\mathbb{N} \to \mathbb{R}_{\geq 0}$ eine Funktion. Sei $T(n) = \Theta(O(n^{\log_{b}(a)})) + g(n)$ mit $g(n) \defeq \sum_{i=0}^{\log_{b}(n) - 1} a^{i}f(\frac{n}{b^{i}})$ Betrachte die Funktion beschränkt auf Werte von n mit $n = b^{j} \text{ für } j \in \mathbb{N}$.
+	\begin{itemize}
+		\item Falls f(n) = O($n^{\log_{b}(a) - \epsilon}$) für eine Konstante $\epsilon > 0$, dann $g(n) = O(n^{\log_{b}(a)})$
+		\item Falls f(n) = $\Theta(n^{\log_{b}(a)})$, dann $g(n) = \Theta(n^{\log_{b}(a)} \log n)$
+		\item Falls f(n) = $\Omega(n^{\log_{b}(a) + \epsilon})$ für eine Konstante $\epsilon > 0$ und falls $af(\frac{n}{b}) \leq cf(n)$ für eine Konstante $c < 1$ und alle hinreichend großen $n$, dann gilt $g(n) = \Theta(f(n))$
+	\end{itemize}
+\end{lemma}
+\nt{Die Funktion g(n) ist die Summe der Kosten der rekursiven Aufrufe.\\ 
+	Das Lemma beschreibt das Mastertheorem für den Fall, dass n eine Potenz von b ist. Die höhe des Rekursionbaumes beträgt $\log_{b}(n)$ Logischerweise ist die gesammte Laufzeit die Summe über alle Knoten für jedes Level, wobei sich die anzahl an Knoten mit der höhe Skaliert mit $a^{h}$ hinzu kommt dannn noch das die Kosten pro level noch mit der Summe $\sum_{i=0}^{h-1} f(\frac{n}{b^{i}})$ gegeben ist. Also ensteht daher die Formel für die gesammt Laufzeit mit $\Theta(a^{h}) + \sum_{i=0}^{h-1} f(\frac{n}{b^{i}})$}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/Mastertheorem.jpeg}
+	\caption{Visualized Lemma 1}
+	\label{fig:2}
+\end{figure}
+\section{Greedy Algorithmen}
+\dfn{Greedy Algorithmen}{Greedy Algorithmen sind Algorithmen die immer den besten lokalen Schritt wählen. }
+\ex{Wechselgeldproblem}{Das Wechselgeldproblem stellt die Münzen schritt für schritt zusammen, die am nächsten an den Restbetrag herankommen.
+Wie viel noch fehlt wird sich in der Variable $z'$ gemerkt.}
+\thm{}{Der Greedy Algorithmus löst das Wechselgeldproblem optimal.(Was ist wenn die Währung doof ist, siehe nächste Note)}
+\nt{Für richtige Währungen wenn man Quatsch Währungen wählt lässt sich schnell ein gegenbeispiel Konstruieren z.B. 1,3,4 jezt 6 als Betrag. Also wird halt die 4 gewählt weil die am größten ist dementsprechend wird in den nächsten 2 Schritten 2 mal die 1 gewählt, aber die 3 und 3 wären besser gewesen.}
+Ich mach einfach mal nen beweis für die Vibes dazu, keine Ahnung gerade Bock drauf steht aber auch so im Skript(in Schöner siehe Seite 29).
+\begin{proof}
+	Sei $z \in \mathbb{N}$ ein beliebiger Betrag, welcher genau erreicht werden soll. Für $i \in M : = \{1,2,5,10,20,50,100,200\}$ mit $x_{i} \in \mathbb{N_{0}}$
+	Wegen der Def von Greedy Algorithmen, das immer der Lokal beste Schritt gewählt wird folgt das die ungleichung mit $i \in M, i > 1$ gilt 
+	$$ \sum_{j \in M, j < i}^{}jx_{j} < i  $$
+	Das j ist hierbei die Münze die gerade betrachtet wird, diese ist immer kleiner als i, da sonst das i gewählt werden würde, was gegen die Defenition von Greedy Algorithmen verstößt, da es eine bessere Lösung gibt.\\
+	Zusammen mit der Ausgangsbedingung das der zu erreichende Betrag z immer $\sum_{i \in M}^{}ix_{i}$ ist. Nun lässt sich hierdrüber folgende Induktion aufbauen.\\
+	 $z = 1$ trivialerweise gilt die Aussage.\\ Die Aussage gilt für alle $z \in \mathbb{N}$ mit $z > 1$ betrachte $$ \sum_{j \in M, j < i}^{}jx_{j} < i  $$ \\ für ein $i \ maximal \leq z$ muss mindestens eine Münze vom Wert i enthalten sein, da sonst der Betrag nicht erreicht werden kann.\\
+	Die Behauptung folgt auch für $z' = z - i$ da $z' \leq z$ gilt.\\ 
+	Also ist die Lösung vom Greedy Algorithmus mit der Ungleichung erfüllt.\\
+	Nun lässt sich Annehmen, das sich eine optimale Lösung finden lässt. Wenn man alle Münzen in M durchgeht lässt sich immer jede Münze durch eine Kombination von Münzen mit kleinerem Wert ersetzen.\\
+	Formaler sei $y_{i} \in \mathbb{N}_{0}$ mit $ \sum_{i \in M} iy_{i} = z $ und kleinstmöglicher Zahl $\sum{i \in M} y_{i}$\\
+	Sei die Lösung in Optimalerweise $x_{i} \in \mathbb{N}_{0}$ Zum Beispiel gilt $y_{1} \leq 1$, da zwei 1 Cent Münzen durch eine 2 Cent Münze ersetzt werden können.\\
+	Daraus folgt die ungleichung $1 \cdot y_{1} < 2$\\
+	Analog folgt für $y_{2}, y_{2} \leq 2$, da sich 3 2 Cent Münzen durch eine 5 Cent Münze und eine 1 Cent Münze ersetzen lassen.\\
+	Daraus folgt die ungleichung $1 \cdot y_{1} + 2 \cdot y_{2} < 5$\\ $\rightarrow$ Dies gilt für alle $i \in M$
+\end{proof} 
+\subsection{Optimale Auswahl von Aufgaben}
+\end{document}

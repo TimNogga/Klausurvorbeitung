@@ -1,0 +1,12 @@
+\contentsline {chapter}{\numberline {1}Einleitung}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Insertionsort}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Größenordnungen}{2}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Methoden zum Entwurf von Algorithmen}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Divide and Conquer}{4}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Binary Search}{4}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Merge Sort}{5}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Divide-and-Conquer am Beispiel von Strassen}{5}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Master Theorem}{6}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Greedy Algorithmen}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Optimale Auswahl von Aufgaben}{8}{subsection.2.2.1}%
+\contentsfinish 
