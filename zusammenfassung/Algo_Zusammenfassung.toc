@@ -9,4 +9,5 @@
 \contentsline {subsection}{\numberline {2.1.4}Master Theorem}{6}{subsection.2.1.4}%
 \contentsline {section}{\numberline {2.2}Greedy Algorithmen}{7}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Optimale Auswahl von Aufgaben}{8}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Rucksackproblem mit Teilbaren Aufgaben}{9}{subsection.2.2.2}%
 \contentsfinish 

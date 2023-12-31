@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.24)  30 DEC 2023 00:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.24)  31 DEC 2023 16:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1250,7 +1250,7 @@ Chapter 2.
 [4
 
 ]
-<images/IMG_86CA0912DB1F-1.jpeg, id=153, 1498.59875pt x 930.47626pt>
+<images/IMG_86CA0912DB1F-1.jpeg, id=156, 1498.59875pt x 930.47626pt>
 File: images/IMG_86CA0912DB1F-1.jpeg Graphic file (type jpg)
 <use images/IMG_86CA0912DB1F-1.jpeg>
 Package pdftex.def Info: images/IMG_86CA0912DB1F-1.jpeg  used on input line 134.
@@ -1267,7 +1267,7 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/it' in size <5.5> not available
 (Font)              size <5> substituted on input line 156.
 
 [6 <./images/IMG_86CA0912DB1F-1.jpeg>]
-<images/Mastertheorem.jpeg, id=220, 2072.74374pt x 1059.96pt>
+<images/Mastertheorem.jpeg, id=223, 2072.74374pt x 1059.96pt>
 File: images/Mastertheorem.jpeg Graphic file (type jpg)
 <use images/Mastertheorem.jpeg>
 Package pdftex.def Info: images/Mastertheorem.jpeg  used on input line 167.
@@ -1277,7 +1277,17 @@ Overfull \hbox (4.25414pt too wide) in paragraph at lines 179--181
 []\OT1/cmr/m/n/10 Sei $\OML/npxmi/m/it/10 z \LMS/npxsy/m/n/10 2 \U/npxmia/m/it/10 ‘$ \OT1/cmr/m/n/10 ein be-liebiger Be-trag, welcher genau er-re-icht wer-den soll. F^^?ur $\OML/npxmi/m/it/10 i \LMS/npxsy/m/n/10 2 \OML/npxmi/m/it/10 M \OT1/cmr/m/n/10 :\U/npxmia/m/it/10 = \LMS/npxsy/m/n/10 f\OT1/cmr/m/n/10 1\OML/npxmi/m/it/10 ; \OT1/cmr/m/n/10 2\OML/npxmi/m/it/10 ; \OT1/cmr/m/n/10 5\OML/npxmi/m/it/10 ; \OT1/cmr/m/n/10 10\OML/npxmi/m/it/10 ; \OT1/cmr/m/n/10 20\OML/npxmi/m/it/10 ; \OT1/cmr/m/n/10 50\OML/npxmi/m/it/10 ; \OT1/cmr/m/n/10 100\OML/npxmi/m/it/10 ; \OT1/cmr/m/n/10 200\LMS/npxsy/m/n/10 g$
  []
 
-[7 <./images/Mastertheorem.jpeg>] [8] (./Algo_Zusammenfassung.aux)
+[7 <./images/Mastertheorem.jpeg>]
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
+
+ []
+
+[8]
+Overfull \hbox (30.00002pt too wide) in paragraph at lines 246--246
+[]|[][][][]  
+ []
+
+[9] [10] (./Algo_Zusammenfassung.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-11>
@@ -1292,18 +1302,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 37606 strings out of 474181
- 754463 string characters out of 5745946
- 1950457 words of memory out of 5000000
- 59119 multiletter control sequences out of 15000+600000
+ 37671 strings out of 474181
+ 755547 string characters out of 5745946
+ 1958457 words of memory out of 5000000
+ 59152 multiletter control sequences out of 15000+600000
  591893 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,15n,102p,737b,1724s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,15n,102p,1352b,1724s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/txmiaSTbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/txsym.pfb>
-Output written on Algo_Zusammenfassung.pdf (9 pages, 874160 bytes).
+Output written on Algo_Zusammenfassung.pdf (11 pages, 895107 bytes).
 PDF statistics:
- 390 PDF objects out of 1000 (max. 8388607)
- 282 compressed objects within 3 object streams
- 94 named destinations out of 1000 (max. 500000)
- 341 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 456 PDF objects out of 1000 (max. 8388607)
+ 336 compressed objects within 4 object streams
+ 126 named destinations out of 1000 (max. 500000)
+ 397 words of extra memory for PDF output out of 10000 (max. 10000000)
 

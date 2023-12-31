@@ -192,4 +192,58 @@ Ich mach einfach mal nen beweis für die Vibes dazu, keine Ahnung gerade Bock dr
 	Daraus folgt die ungleichung $1 \cdot y_{1} + 2 \cdot y_{2} < 5$\\ $\rightarrow$ Dies gilt für alle $i \in M$
 \end{proof} 
 \subsection{Optimale Auswahl von Aufgaben}
+\nt{Intervall Scheduling:
+Jede Aufgabe hat eine Startzeit $s_{i} \geq 0$ und eine Endzeit $f_{i}$, wobei $s_{i} < f_{i}$ gilt.\\
+Zudem steht ein Prozesor zur verfügung der nur eine Aufgabe gleichzeitig bearbeiten kann.\\
+Die Aufgabe ist es nun eine möglichst große Teilmenge von Aufgaben zu finden, die sich nicht überschneiden.\\}
+\dfn{Intervall Scheduling Formales Ziel}{Gescucht ist eine Teilmenge $S' \subseteq S$, sodass für jedes $i,j \in S'$ gilt $i \neq j$ und $[s_{i}, f_{i}) \cap [s_{j}, f_{j}) = \emptyset$}
+\nt{Es liegt nahe das es einen Greedy Algorithmus gibt welcher das Problem löst(Im Skript kommen noch Algorithmen die nicht klappen)}
+\begin{algorithm}[H]
+\caption{Greedy Ende}
+$S^{*}$ = $\emptyset$\\
+\While{$S \neq \emptyset$}{
+	\text{Wähle die Aufgabe i mit dem frühesten Ende}\\
+	$S^{*} = S^{*} \cup \{i\}$\\
+	$S = S \setminus \{i\}$ \text{Keine Ahnung nicht im Skript aber kommt mir logisch vor}\\ 
+	\text{Entferne alle Aufgaben die sich mit i überschneiden}
+
+}
+\end{algorithm}
+Für den Beweis von den Algorithmus wird folgendes Lemma benötigt.
+\mlenma{}{Es sei S eine Menge von Aufgaben und es sei $i \in S$ eine Aufgabe mit dem frühesten Ende. Dann gibt es eine Optimale Auswahl $S' \subseteq S$ von paarweise nicht kollidierenden Aufgaben mit $i \in S'$}
+\nt{Das Lenma sagt basically nur aus das es eine optimale Lösung gibt.}
+\begin{proof}
+	Genauer Beweis im Skript seite 32. Aber man definiert sich eine Optimale Menge $S^{*}$ in diese fügt man dann eine Aufgabe i ein. Die Menge $S^{*}$ ist dann immer noch optimal und es gibt keine Überschneidungen, da i vor oder gleich mit j der vorher kürzesten Aufgabe aufhört. j hat sich halt obviously auch nicht überschnitten, weil dann wär es nicht optimal gewesen. 
+\end{proof}
+\thm{}{Der Algorithmus GreedyEnde wählt für jede Instanz eine größtmög-
+liche Menge von paarweise nicht kollidierenden Aufgaben aus.}
+\begin{proof}
+	Lässt sich recht entspannt über ne invariante Zeigen:\\
+	In Zeile 2 gilt immer das $S^{*}$ sich zu einer optimalen Lösung erweitert.\\
+	In der ersten Iteration gilt die Invariante, da \( S^* \) leer ist und \( S \) noch alle Aufgaben enthält. Sei nun die Invariante zu Beginn eines Schleifendurchlaufs erfüllt. Dann gibt es eine optimale Auswahl \( \hat{S} \subseteq S^* \cup S \) von Aufgaben, die alle Aufgaben aus \( S^* \) und gegebenenfalls zusätzliche Aufgaben aus \( S \) enthält. Außerdem kollidieren Aufgaben aus \( S^* \) nicht mit Aufgaben aus \( S \). Das heißt, bei der Frage, welche Aufgaben aus \( S \) den Aufgaben aus \( S^* \) noch hinzugefügt werden müssen, um eine optimale Auswahl \( \hat{S} \) zu erhalten, spielen die Aufgaben aus \( S^* \) keine Rolle. Die Menge \( \hat{S} \setminus S^* \) dieser Aufgaben ist eine größtmögliche Teilmenge von paarweise nicht kollidierenden Aufgaben aus \( S \). Gemäß Lenma 2.2.1 existiert eine solche Menge, die die Aufgabe \( i \in S \) mit dem frühesten Fertigstellungszeitpunkt \( f_i \) aller Aufgaben aus \( S \) enthält. Genau diese Aufgabe fügt der Greedy-Algorithmus am Ende der Menge \( S^* \) hinzu. Anschließend werden aus \( S \) alle Aufgaben entfernt, die mit dieser Aufgabe \( i \) kollidieren. Dies garantiert zusammen, dass auch am Anfang der nächsten Iteration die Invariante wieder erfüllt ist.
+\end{proof}
+\dfn{Laufzeit Greedy Ende}{Die Laufzeit des Algorithmus GreedyEnde beträgt $O(n \log n)$, wobei $n = |S|$ die Anzahl der Aufgaben in der Eingabe bezeichnet. Sind die Aufgaben bereits aufsteigend nach ihrem Fertigstellungszeitpunkt sortiert, so beträgt die Laufzeit O(n).}
+\nt{Es läuft halt n mal durch und man kann es in $O(n \log n)$ sortieren.}
+\subsection{Rucksackproblem mit Teilbaren Aufgaben}
+Das Rucksack, wie wir es Behandeln (anscheinend kommt mehr in Algo 2) besteht aus einer Menge von Objekten $O = \{1, \dots, n\}$, wobei jedes Objekt $i \in O$ ein Gewicht $w_{i} \in \mathbb{N}$ und einen Nutzen $p_{i} \in \mathbb{N}$ besitzt.\\
+Es soll eine Teilmenge der Objekte gefunden werden, die in den Rucksack passt und unter dieser Bedingung maximalen Nutzen besitzt.
+Jetzt wo es ein bisschen anders ist: \\ Wir dürfen das Objekt Teilen für den maximalen Nutzen.
+
+\begin{algorithm}[H]
+\caption{Greedy Rucksack}
+Sortiere die Objekte nach dem Nutzen pro Gewicht $p_{i}/w_{i}$ in absteigender Reihenfolge.\\
+\For{int i = 1; i $\leq$ n; i++}{x[i] = 0;}
+int i = 1;\\
+\While{$t>0$ and $i\leq n$}{
+	\If{$t \geq w_{i}$}{
+		$x_{i} = 1$\\
+		$t = t - w_{i}$
+	}
+	\Else{x[i] = t/w[i], t = 0\\}
+	i++;
+}
+\Return{$x_{1}, \dots, x_{n}$}
+\thm{}{Der Algorithmus GreedyRucksack liefert für jede Instanz eine optimale Lösung in $O(n \log n)$ Zeit.}
+
+\end{algorithm}
 \end{document}
