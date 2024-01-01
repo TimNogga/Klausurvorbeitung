@@ -243,7 +243,16 @@ int i = 1;\\
 	i++;
 }
 \Return{$x_{1}, \dots, x_{n}$}
-\thm{}{Der Algorithmus GreedyRucksack liefert für jede Instanz eine optimale Lösung in $O(n \log n)$ Zeit.}
-
 \end{algorithm}
+\thm{}{Der Algorithmus GreedyRucksack liefert für jede Instanz eine optimale Lösung in $O(n \log n)$ Zeit.}
+\begin{proof}
+	Zur Laufzeit: Greedy Rucksack wird von den Sortieren Dominiert, dies läuft über Merge-Sort in $O(n \log n)$. Die Schleifen können jeweils nur n mal durchlaufen, was die laufzeit von $O(n \log n)$ zeigt.\\
+	Zur Korrektheit: Da die Lösung trivial ist, wenn alle Objekte in den Rucksack passen wird im folgenden nur der andere Fall betrachtet mit $t < \sum_{i=1}^{n} w_{i}$.\\
+	Es gibt nun ein $i \in \{1, \dots, n\}$ mit $x_{1} = \dots = x_{i-1} = 0 $ $x < 1 $ und $x_{i+1} = \dots = x_{n} = 0$\\
+	Greedy Rucksack füllt natürlich auch den Rucksack. Jede Optimale Lösung muss den Rucksack auch ausfüllen, das heißt es gilt $\sum_{i=1}^{n} x_{i}^{*} w_{i} = t$.\\
+	Es wird nun gezeigt, dass sich die Lösung von $x^{*}$ in die Lösung x von Greedy Rucksack umwandeln lässt ohne die Nutzen zur veringern.\\
+	Jetzt wird der kleinste Index i genommen $x_{i}^{*} < 1$ und $x_{i+1}^{*} = \dots = x_{n}^{*} = 0$. Hier gilt jetzt $x^{*} = x$ muss mir nochmal anschauen warum.TODO
+	Es gibt einen Index $j > i$ mit $x_{j}^{*} > 0$. Sei j der größte solcher Indexe. Die j lassen sich jetzt reduzieren während man das i gegenscaled. Wegen der Effizienz von i welche mindestens die von j ist verändert sich nicht der Nutzen
+\end{proof}
+
 \end{document}
