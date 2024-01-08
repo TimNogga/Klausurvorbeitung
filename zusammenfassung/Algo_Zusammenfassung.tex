@@ -254,5 +254,69 @@ int i = 1;\\
 	Jetzt wird der kleinste Index i genommen $x_{i}^{*} < 1$ und $x_{i+1}^{*} = \dots = x_{n}^{*} = 0$. Hier gilt jetzt $x^{*} = x$ muss mir nochmal anschauen warum.TODO
 	Es gibt einen Index $j > i$ mit $x_{j}^{*} > 0$. Sei j der größte solcher Indexe. Die j lassen sich jetzt reduzieren während man das i gegenscaled. Wegen der Effizienz von i welche mindestens die von j ist verändert sich nicht der Nutzen
 \end{proof}
+Da die Lösung zwar immer Korrekt ist aber vergleichsweise Langsam wird jetzt ein Appromixativer Algorithmus eingeführt.
+\begin{algorithm}[H]
+\caption{Approximative Greedy Rucksack}
+Berechne mit Int Greedy Rucksack eine Lösung $x_{1}^{*}, \dots, x_{n}^{*}$\\
+j = argmax\{$p_{i}$\}, $ i \in \mathbb{N}$\\
+\If{$\sum^{n}_{i = 1} p_{i}x_{i}^{*} \geq p_{j}$}{
+	\Return{$x^{*}$}
+}
+\Else{
+	\Return{$x' = (x'_{1} \dots x'_{n})$ mit $x'_{1} = \begin{cases}
+		0 \ \text{falls} \ i \neq j \\
+		1 \ \text{falls} \ i = j 
+		\end{cases}$
+		 }
+}
+\end{algorithm}
+\thm{}{ Der Algorithmus Approximative Greedy Rucksack berechnet auf jeder Eingabe für das Rucksackproblem mit n Objekten in Zeit $O(n \log n)$ eine gültige ganzzahlige Lösung, deren Nutzen mindestens halb so groß ist wie der Nutzen einer optimalen ganzzahligen Lösung.}
 
+\section{Dynamische Programmierung}
+\subsection{Einführung und einfaches Beispiel Fibonacci}
+Bei Fibonacci lässt sich folgende Funktion aufstellen: \\
+$f_{n} = 
+\begin{cases}
+	0 \ \ \text{falls} \ n = 0 \\
+	1 \ \ \text{falls} \ n = 1 \\
+	f_{n-1} + f_{n-2} \ \ \text{falls} \ n \geq 2 \\
+\end{cases}$
+
+Daraus folgt der Algorithmus
+
+\begin{algorithm}[H]
+\KwIn{int n}
+\caption{Fibonacci-Rek}
+\If{n == 0}{\Return{0}}
+\If{n == 1}{\Return{1}}
+\Else{\Return {Fibonacci-Rek(n-1) +Fibonacci-Rek(n-2) } }
+
+\end{algorithm}
+
+\subsection{Berechnung optimaler Zuschnitte}
+Ok, wir lernen jetzt wie man Holz Dealer wird.\\
+Die Eingabe hier ist $ n \in \mathbb{N}  $ Wenn wir ein Brett in 5 Teile Zerlegen können wir jetzt alel Kombinationen durchgehen und schauen was am besten ist.\\
+Das ist ein bisschen zu schlecht wegen exponentieller Laufzeit, deswegen wird Dynamisch Programmiert.
+Für $ i \in \{1, \dots , n \}$ wird der maximale Erlös $R_{i}$ für ein Brett der Länge i berechnet.
+Das berechnen von $R_{i}$ wird als Teilproblem bezeichnet.
+Die Lösung des Gesamtproblems ist dann $R_{n}$
+Es gilt natürlich $R_{1} = p_{1}$, da wir ein brett der länge 1 nicht zerlegen können\\
+\mlenma{}{Für $ i \in \{1, \dots , n \}$ gilt $R_{i} = max \{p_{j} + R_{i-j} , j \in \{1, \dots , n \}$}
+
+\begin{algorithm}[H]
+\caption{Optimaler Zuschnitt}
+\KwIn{int n}
+\KwOut{int $R_{n}$}
+$R_{0} = p_{0}$\\
+\For{i = 1; $i \leq n$; i++}{
+	$R_{i} = -1$
+	\For{j=1; $j \leq i$; j++}{
+		$R_{i} = max\{R_{i}, p_{j} + R_{i-j}\}$
+	}
+
+}
+\Return{$R_{n}$}
+\end{algorithm}
+\thm{}{Der Algorithmus berechnet in $O(n^{2})$ Zeit den optimalen Erlös für ein Brett der Länge n.}
+\subsection{Rucksackproblem}
 \end{document}
