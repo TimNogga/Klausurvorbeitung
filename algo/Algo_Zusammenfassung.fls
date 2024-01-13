@@ -1,8 +1,8 @@
-PWD /Users/timnogga/Uni/algo/Klausurvorbeitung/zusammenfassung
+PWD /Users/timnogga/Uni/algo/Klausurvorbeitung/algo
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/timnogga/Uni/algo/Klausurvorbeitung/zusammenfassung/Algo_Zusammenfassung.tex
+INPUT /Users/timnogga/Uni/algo/Klausurvorbeitung/algo/Algo_Zusammenfassung.tex
 OUTPUT Algo_Zusammenfassung.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
@@ -387,6 +387,9 @@ INPUT /Users/timnogga/Uni/letterfonts.tex
 INPUT /Users/timnogga/Uni/letterfonts.tex
 INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+INPUT ./Algo_Zusammenfassung.aux
+INPUT ./Algo_Zusammenfassung.aux
+INPUT Algo_Zusammenfassung.aux
 OUTPUT Algo_Zusammenfassung.aux
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/newpx/omlnpxmi.fd

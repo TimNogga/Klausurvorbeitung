@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.24)  12 JAN 2024 10:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.24)  13 JAN 2024 10:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/timnogga/Uni/algo/Klausurvorbeitung/zusammenfassung/Algo_Zusammenfassung.tex
-(/Users/timnogga/Uni/algo/Klausurvorbeitung/zusammenfassung/Algo_Zusammenfassung.tex
+**/Users/timnogga/Uni/algo/Klausurvorbeitung/algo/Algo_Zusammenfassung.tex
+(/Users/timnogga/Uni/algo/Klausurvorbeitung/algo/Algo_Zusammenfassung.tex
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-11>
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
@@ -1083,13 +1083,12 @@ Package: titletoc 2023/10/27 v2.16 TOC entries
 \c@lemma=\count462
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-No file Algo_Zusammenfassung.aux.
+) (./Algo_Zusammenfassung.aux)
 \openout1 = `Algo_Zusammenfassung.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 14.
 LaTeX Font Info:    Trying to load font information for OML+npxmi on input line 14.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/newpx/omlnpxmi.fd
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
 LaTeX Font Info:    ... okay on input line 14.
@@ -1288,7 +1287,7 @@ File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 226.
 
-/Users/timnogga/Uni/algo/Klausurvorbeitung/zusammenfassung/Algo_Zusammenfassung.tex:226: Too many }'s.
+/Users/timnogga/Uni/algo/Klausurvorbeitung/algo/Algo_Zusammenfassung.tex:226: Too many }'s.
 l.226 ... man kann es in $O(n \log n)$ sortieren.}
                                                   
 You've closed more groups than you opened.
@@ -1322,13 +1321,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 37701 strings out of 474181
- 756228 string characters out of 5745946
+ 37704 strings out of 474181
+ 756282 string characters out of 5745946
  1954457 words of memory out of 5000000
- 59154 multiletter control sequences out of 15000+600000
+ 59155 multiletter control sequences out of 15000+600000
  590954 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,19n,102p,1352b,1724s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,19n,102p,1341b,1724s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/txmiaSTbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/txsym.pfb>
 Output written on Algo_Zusammenfassung.pdf (12 pages, 886416 bytes).
 PDF statistics:
