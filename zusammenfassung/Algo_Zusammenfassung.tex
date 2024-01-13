@@ -1,8 +1,8 @@
 \documentclass{report}
 
-\input{preamble}
-\input{macros}
-\input{letterfonts}
+\input{/Users/timnogga/Uni/preamble}
+\input{/Users/timnogga/Uni/macros}
+\input{/Users/timnogga/Uni/letterfonts}
 \usepackage{tikz}
 \newtheorem{lemma}{Lemma}
 \usetikzlibrary{matrix, positioning, arrows.meta}
@@ -223,7 +223,7 @@ liche Menge von paarweise nicht kollidierenden Aufgaben aus.}
 	In der ersten Iteration gilt die Invariante, da \( S^* \) leer ist und \( S \) noch alle Aufgaben enthält. Sei nun die Invariante zu Beginn eines Schleifendurchlaufs erfüllt. Dann gibt es eine optimale Auswahl \( \hat{S} \subseteq S^* \cup S \) von Aufgaben, die alle Aufgaben aus \( S^* \) und gegebenenfalls zusätzliche Aufgaben aus \( S \) enthält. Außerdem kollidieren Aufgaben aus \( S^* \) nicht mit Aufgaben aus \( S \). Das heißt, bei der Frage, welche Aufgaben aus \( S \) den Aufgaben aus \( S^* \) noch hinzugefügt werden müssen, um eine optimale Auswahl \( \hat{S} \) zu erhalten, spielen die Aufgaben aus \( S^* \) keine Rolle. Die Menge \( \hat{S} \setminus S^* \) dieser Aufgaben ist eine größtmögliche Teilmenge von paarweise nicht kollidierenden Aufgaben aus \( S \). Gemäß Lenma 2.2.1 existiert eine solche Menge, die die Aufgabe \( i \in S \) mit dem frühesten Fertigstellungszeitpunkt \( f_i \) aller Aufgaben aus \( S \) enthält. Genau diese Aufgabe fügt der Greedy-Algorithmus am Ende der Menge \( S^* \) hinzu. Anschließend werden aus \( S \) alle Aufgaben entfernt, die mit dieser Aufgabe \( i \) kollidieren. Dies garantiert zusammen, dass auch am Anfang der nächsten Iteration die Invariante wieder erfüllt ist.
 \end{proof}
 \dfn{Laufzeit Greedy Ende}{Die Laufzeit des Algorithmus GreedyEnde beträgt $O(n \log n)$, wobei $n = |S|$ die Anzahl der Aufgaben in der Eingabe bezeichnet. Sind die Aufgaben bereits aufsteigend nach ihrem Fertigstellungszeitpunkt sortiert, so beträgt die Laufzeit O(n).}
-\nt{Es läuft halt n mal durch und man kann es in $O(n \log n)$ sortieren.}
+\{Es läuft halt n mal durch und man kann es in $O(n \log n)$ sortieren.}
 \subsection{Rucksackproblem mit Teilbaren Aufgaben}
 Das Rucksack, wie wir es Behandeln (anscheinend kommt mehr in Algo 2) besteht aus einer Menge von Objekten $O = \{1, \dots, n\}$, wobei jedes Objekt $i \in O$ ein Gewicht $w_{i} \in \mathbb{N}$ und einen Nutzen $p_{i} \in \mathbb{N}$ besitzt.\\
 Es soll eine Teilmenge der Objekte gefunden werden, die in den Rucksack passt und unter dieser Bedingung maximalen Nutzen besitzt.
@@ -319,4 +319,5 @@ $R_{0} = p_{0}$\\
 \end{algorithm}
 \thm{}{Der Algorithmus berechnet in $O(n^{2})$ Zeit den optimalen Erlös für ein Brett der Länge n.}
 \subsection{Rucksackproblem}
+Ok jetzt setzen wir uns wieder einen Rucksack auf. 
 \end{document}
